@@ -88,6 +88,11 @@ public class ArrayUtil {
 		return array2;
 	}
 
+	/**
+	 * Funkcija koja pomjera desno vrijednosti niza
+	 * @param array niz u kojem su smjestene vrijednosti
+	 * @return vraca niz sa vrijednostima koje su za jedno mijesto pomjerene u desno
+	 */
 	public static int[] pomjeriDesno(int[] array) {
 
 		for (int i = array.length - 2; i >= 0; i--) {
@@ -96,7 +101,11 @@ public class ArrayUtil {
 		array[0] = 0;
 		return array;
 	}
-
+/**
+ * Funkcija koja pomjera lijevo vrijednosti niza
+ * @param array niz u kojem su smjestene vrijednosti
+ * @return vraca niz sa vrijednostima koje su za jedno mijesto pomjerene u lijevo
+ */
 	public static int[] pomjeriLijevo(int[] array) {
 
 		for (int i = 1; i < array.length; i++) {
@@ -143,9 +152,73 @@ public class ArrayUtil {
 		int j = numColumn;
 			for (int i = 0; i < matrix.length; i++) {
 				nizKolone[i] = matrix[i][j];
-			}
+			} 
 		
 		return nizKolone;
 
+	}
+	
+	/**
+	 * Funkcija koja pretrazuje vrijednost u nizu
+	 * @param array niz vrijednosti
+	 * @param key vrijednost koju trazimo
+	 * @return ako pronadje trazenu vrijednost vraca njen index u nizu u protivnom vraca -1
+	 */
+	public static int linearSearch( int [] array, int key){
+		 for ( int i =0; i< array.length; i++){
+			 if ( array [i] == key){
+				 System.out.println("Index na kojem se nalazi vrijednost je: "+i);
+			 } 
+		 }
+		 return -1;
+	}
+	
+	public static void sortArray (int [] array, boolean ascending){
+		 ascending = true;
+		 if (ascending){
+			 sortAscending(array);
+		 }else{
+			 sortDescending(array);
+		 }
+		
+		
+	}
+
+	private static void sortDescending(int[] array) {
+		boolean swapped = true;
+//	    int j=0;
+	    int temp;
+	    while (swapped){
+	    	swapped = false;
+//	    	j++;
+	    	for ( int i = 0; i<array.length; i++){
+	    		if ( array [i+1]> array [i]){
+	    			temp = array [i];
+	    			array [i] = array [i+1];
+	    			array [i+1] = temp;
+	    			swapped= true;
+	    		}
+	    	}
+	    }
+		
+	}
+
+	private static void sortAscending(int[] array) {
+		boolean swapped = true;
+//		int j = 0;
+		int temp;
+		while (swapped){
+			swapped = false;
+//			j++;
+			for ( int i =0; i< array.length; i++){
+				if ( array [i]> array [i+1]){
+					temp = array [i];
+					array [i]= array [i+1];
+					array [i+1] = temp;
+					swapped = true;
+				}
+			}
+		}
+		
 	}
 }

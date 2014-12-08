@@ -24,7 +24,15 @@ public class TestnaKlasa {
 	int numColumn = TextIO.getlnInt();
 	int [] nizKolone = ArrayUtil.arrayOfColumn(matrix, numColumn);
 	ArrayUtil.printArray(nizKolone);
+	 
+	System.out.println("Unesite vrijednost koju pretrazujete: ");
+	int key = TextIO.getlnInt();
+	int index = ArrayUtil.linearSearch(arr1, key);
+	System.out.printf("Broj na kojem se nalazi vrijednost je %d ", index);
 	
+	boolean ascending = true;
+	ArrayUtil.sortArray(arr1, ascending);
+	ArrayUtil.printArray(arr1);
 	
 	}
 			
